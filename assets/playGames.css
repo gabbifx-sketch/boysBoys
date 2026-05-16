@@ -1,0 +1,246 @@
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    /* =========================
+       MAIN BACKGROUND COLORS
+       ========================= */
+
+    --bg-main: #050816;           /* Main website background */
+    --bg-secondary: #0B1023;     /* Secondary sections */
+    --bg-card: #12182B;          /* Game cards */
+    --bg-hover: #1B2440;         /* Hover effect */
+    --bg-sidebar: #0b1125;       /* Sidebar background */
+    --bg-navbar: #090D1A;        /* Navbar background */
+
+
+    /* =========================
+       PRIMARY BRAND COLORS
+       ========================= */
+
+    --primary: #7C3AED;          /* Main purple */
+    --primary-light: #A855F7;    /* Light purple */
+    --primary-dark: #5B21B6;     /* Dark purple */
+
+
+    /* =========================
+       TEXT COLORS
+       ========================= */
+
+    --text-main: #FFFFFF;        /* Main white text */
+    --text-secondary: #B6BED3;   /* Secondary text */
+    --text-muted: #6B728E;       /* Muted text */
+
+
+    /* =========================
+       BORDER COLORS
+       ========================= */
+
+    --border-main: #1F2937;      /* Main borders */
+    --border-light: #374151;     /* Light borders */
+
+
+    /* =========================
+       BUTTON COLORS
+       ========================= */
+
+    --btn-primary: #7C3AED;      /* Main button */
+    --btn-primary-hover: #8B5CF6; /* Hover button */
+    --btn-dark: #111827;         /* Dark button */
+
+
+    /* =========================
+       CATEGORY COLORS
+       ========================= */
+
+    --action: #EF4444;           /* Action games */
+    --adventure: #22C55E;        /* Adventure games */
+    --racing: #F97316;           /* Racing games */
+    --sports: #3B82F6;           /* Sports games */
+    --puzzle: #EAB308;           /* Puzzle games */
+    --arcade: #EC4899;           /* Arcade games */
+
+
+    /* =========================
+       SHADOWS & EFFECTS
+       ========================= */
+
+    --shadow-main: 0 10px 30px rgba(0,0,0,0.4);
+    --shadow-purple: 0 0 20px rgba(124,58,237,0.5);
+
+
+    /* =========================
+       BORDER RADIUS
+       ========================= */
+
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius-large: 20px;
+}
+
+body{
+    background-color: var( --bg-main);
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.align{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.game-title-container{
+    width: 90%;
+    height: 200px;
+    background-color:var(--text-secondary);
+    margin-top: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.back-to-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(2, 16, 56);
+     margin: 0;
+     height: 20px;
+}
+.back-to-home a{
+    color:  rgb(2, 16, 56);
+    text-decoration: none;
+   
+}
+
+.companyname{
+    color: black;
+}
+
+#title{
+    color: #01092e;
+    font-size: 45px;
+    margin: 0;
+}
+
+.game-title-container button{
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     background: var(--btn-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.display-game{
+    width: 70%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+iframe{
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-top: 2px solid #0826aa;
+}
+
+.iframe-bottom{
+    width: 90%;
+    height: 55px;
+    background-color: #0f024b;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+.iframe-logo{
+    width: 160px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iframe-logo img{
+    width: 180px;
+}
+
+.iframe-bottom-svgs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 120px;
+}
+.iframe-svgs{
+    width: 40px;
+    height: 40px;
+    background-color: #221c7442;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+
+/* RESPONIVNESS */
+/* Tablets */
+@media (max-width: 900px) {
+
+  .game-title-container{
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  #title{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .display-game{
+    width: 90%;
+    height: 400px;
+  }
+
+  .iframe-logo img{
+    width: 140px;
+  }
+}
+
+.game-detials{
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 12px;
+    background-color: #12015a94;
+    backdrop-filter: blur(12px);
+    color: white;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+
+.game-detials-txt{
+    max-width: 70%;
+}
