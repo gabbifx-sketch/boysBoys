@@ -87,7 +87,8 @@ const aboutgames = [
           platform: {
           mobile: false,
           desktop: false
-    }
+    },
+    notWorkingOnMobile: true,
   },
     {
     title: "Realistic Driver Simulator",

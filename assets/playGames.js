@@ -413,3 +413,90 @@ else {
 
 
 
+// MOBILE FALSE
+import React, { useState, useEffect } from 'react';
+import './Notification.css'; // See CSS below
+
+export default function GameList() {
+  const [notification, setNotification] = useState(null);
+
+  // Function to handle game click
+  const handleGameClick = (game) => {
+    // 1. Check if the user is actually on a mobile device
+    const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+
+    if (isMobile && game.notWorkingOnMobile) {
+      // Trigger the notification with a unique ID every time to reset timers
+      setNotification({
+        id: Date.now(), 
+        message: game.customMessage || "This game does not work on mobile."
+      });
+    } else {
+      // Proceed to launch the game normally
+      console.log(`Launching ${game.title}...`);
+    }
+  };
+
+  // Auto-timeout effect: Closes the notification after 5 seconds
+  useEffect(() => {
+    if (!notification) return;
+
+    const timer = setTimeout(() => {
+      setNotification(null);
+    }, 5000); // 5000ms = 5 seconds
+
+    return () => clearTimeout(timer); // Clear timer if user clicks 'X' early
+  }, [notification]);
+
+  return (
+    <div className="game-container">
+      {/* Top Notification Popup */}
+      {notification && (
+        <div className="top-notification">
+          <span>{notification.message}</span>
+          <button className="close-btn" onClick={() => setNotification(null)}>×</button>
+        </div>
+      )}
+
+      {/* Render Games List */}
+      <h2>Choose a Game</h2>
+      <div className="grid">
+        {games.map((game) => (
+          <div key={game.id} className="game-card" onClick={() => handleGameClick(game)}>
+            <h3>{game.title}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+
+// Panic mode-overlay
+const studyBtn = document.getElementById("studyBtn");
+const overlay = document.getElementById("studyOverlay");
+const closeBtn = document.getElementById("closeBtn");
+
+studyBtn.onclick = () => {
+    overlay.style.display = "flex";
+};
+
+closeBtn.onclick = () => {
+    overlay.style.display = "none";
+};
+
+/* OPTIONAL KEYBOARD SHORTCUT */
+document.addEventListener("keydown",(e)=>{
+
+    // press P for study mode
+    if(e.key.toLowerCase() === `p`){
+        overlay.style.display = "flex";
+    }
+
+    // ESC closes
+    if(e.key === "Escape"){
+        overlay.style.display = "none";
+    }
+
+});

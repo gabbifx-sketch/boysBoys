@@ -1,3 +1,17 @@
+
+// Panic mode-overlay
+const studyBtn = document.getElementById("studyBtn");
+const overlay = document.getElementById("studyOverlay");
+const closeBtn = document.getElementById("closeBtn");
+
+studyBtn.onclick = () => {
+    overlay.style.display = "flex";
+};
+
+closeBtn.onclick = () => {
+    overlay.style.display = "none";
+};
+
 const catigTitle = document.getElementById('catg-overlay-header-title');
 const catigBtn = document.querySelectorAll('.catig');
 const realDisplay = document.querySelector('.real-displaycatig');

@@ -340,6 +340,7 @@ const games = [
                       {
     title: "KS Z",
     img: "./img/pjpg160x160.webp",
+    categories: ["Action",'Shooting'],
     desc: "Special Forces X is an intense action shooting game where you join elite special forces soldiers on dangerous combat missions against powerful enemies. Use modern weapons, sharp reflexes, and smart tactics to survive fast-paced battles and clear every mission in this thrilling online shooter.",
     id:  "KS Z",
           platform: {
@@ -699,4 +700,50 @@ aboutgames.forEach(aboutgames  => {
   `;
 
   aboutGames.appendChild(card);
+});
+
+
+// Panic mode-overlay
+const studyBtn = document.getElementById("studyBtn");
+const overlay = document.getElementById("studyOverlay");
+const closeBtn = document.getElementById("closeBtn");
+
+studyBtn.onclick = () => {
+    overlay.style.display = "flex";
+};
+
+closeBtn.onclick = () => {
+    overlay.style.display = "none";
+};
+
+/* OPTIONAL KEYBOARD SHORTCUT */
+document.addEventListener("keydown",(e)=>{
+
+    // press P for study mode
+    if(e.key.toLowerCase() === `p`){
+        overlay.style.display = "flex";
+    }
+
+    // ESC closes
+    if(e.key === "Escape"){
+        overlay.style.display = "none";
+    }
+
+});
+
+
+
+
+const mobileToggle = document.querySelector('.mobile-toggle');
+const sidebar = document.querySelector('.sidebar');
+const disableSidebar = document.querySelector('.mobile-hide-sidebar');
+const mobileToggleImg = document.querySelector('.display-logo-on-phones');
+
+mobileToggle.addEventListener('click', () => {
+    sidebar.style.width= '200px';
+
+    console.log("clicked");
+});
+disableSidebar.addEventListener('click', ()=>{
+  sidebar.style.width= '0';
 });

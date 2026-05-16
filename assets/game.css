@@ -107,4 +107,8 @@
 
 
 
-
+@media (max-width: 830px){
+       .side-bar-panic-key{
+        display: none;
+    }
+}
