@@ -204,7 +204,7 @@ body{
     border-radius: 100%;
     background-color: var(--btn-primary-hover);
     position: absolute;
-    transform: translateX(100px);
+    transform: translateX(80px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,11 +212,15 @@ body{
     }
     .sidebar{
         position: fixed;
-        width: 200px;
+        width: 0;
         top: 0;
         bottom: 0;
         transition: left 0.3s ease;
         z-index: 99999;
+        overflow: hidden;
+    }
+    .side-bar-panic-key{
+        display: none;
     }
 
 
@@ -547,7 +551,6 @@ background: linear-gradient(to right, rgb(247, 0, 255), rgb(0, 70, 175), rgb(0, 
 
 /* FEATURED GAMES-HOMPAGE */
 .homepage-featured-games{
-
 }
 
 /* ABOUT */
@@ -637,7 +640,9 @@ border: 1px solid var(--border-main);
   .layout {
     flex-direction: column;
   }
+  .homepage-featured-games{
 
+  }
 
 
 @media (max-width: 600px) {
@@ -684,7 +689,7 @@ border: 1px solid var(--border-main);
 
 
 .homepage-hot-games{
-      width: 90%; 
+    width: 90%; 
     height: 400px;
 }
 .name{
@@ -701,6 +706,15 @@ border: 1px solid var(--border-main);
     width: 100%;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 720px){
+    .homepage-featured-games{
+        margin-bottom: 200px;
+    }
+    .homepage-hot-games{
+            margin-bottom: 200px;
+    }
 }
 
 

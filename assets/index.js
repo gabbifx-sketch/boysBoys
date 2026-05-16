@@ -172,12 +172,12 @@ const disableSidebar = document.querySelector('.mobile-hide-sidebar');
 const mobileToggleImg = document.querySelector('.display-logo-on-phones');
 
 mobileToggle.addEventListener('click', () => {
-    sidebar.style.left= '0';
+    sidebar.style.width= '200px';
 
     console.log("clicked");
 });
 disableSidebar.addEventListener('click', ()=>{
-  sidebar.style.left= '-250px';
+  sidebar.style.width= '0';
 })
 
 
